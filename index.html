@@ -4,83 +4,309 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jathin Lalam | Portfolio</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f9fafc;
-      color: #222;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
+      background: #f9f9f9;
+      color: #222;
+      line-height: 1.6;
     }
+
     header {
-      background: #24292e;
-      color: white;
-      padding: 1rem;
+      background: linear-gradient(90deg, #003366, #005fa3);
+      color: #fff;
+      padding: 2.5rem 1rem;
       text-align: center;
     }
-    nav a {
-      color: white;
-      margin: 0 1rem;
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+      color: #d9e2ec;
+    }
+
+    .social-links {
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      color: #fff;
       text-decoration: none;
-      font-weight: bold;
+      margin: 0 10px;
+      font-size: 1.3rem;
+      transition: color 0.3s;
     }
-    section {
-      max-width: 800px;
+
+    .social-links a:hover {
+      color: #ffd700;
+    }
+
+    main {
+      max-width: 950px;
       margin: 2rem auto;
-      padding: 1rem;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
     h2 {
-      border-bottom: 2px solid #007acc;
-      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #003366;
+      padding-bottom: 0.4rem;
+      color: #003366;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      font-size: 1.4rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Project cards */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: #f0f4fa;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #003366;
+    }
+
+    .project-card p {
+      margin: 0.4rem 0 0.6rem;
+      color: #333;
+      font-size: 0.95rem;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      color: #005fa3;
+      margin-right: 0.8rem;
+      font-size: 0.9rem;
+      transition: color 0.3s;
+    }
+
+    .project-links a:hover {
+      color: #003366;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      margin: 2rem 0;
+    }
+
+    .contact {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .contact span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #444;
+    }
+
+    .contact i {
+      color: #003366;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1.2rem;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Jathin Lalam</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contributions">Contributions</a>
-      <a href="#experience">Experience</a>
-    </nav>
+    <p>Software Engineer @ Netcracker Technology</p>
+    <p>Bangalore, Karnataka, India</p>
+
+    <div class="social-links">
+      <a href="https://github.com/JathinLalam/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/jathin-lalam-0044b8194/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:jathinlalam@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Backend Developer specializing in Golang, microservices, and distributed systems. Passionate about building efficient, scalable, and cloud-native applications.</p>
-  </section>
+  <main>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Golang, Jooby3, Spring Boot, Java</li>
-      <li>Docker, Kubernetes, Kafka</li>
-      <li>PostgreSQL, ArangoDB</li>
-      <li>System Design, State Machines</li>
-    </ul>
-  </section>
+    <section id="work-experience" style="margin-bottom: 40px;">
+      <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>SPOG Platform:</strong> Designed backend services in Go for file and vector storage sync.</li>
-      <li><strong>NDO Sync:</strong> Built ArangoDB integration for incremental data sync with WAL tracking.</li>
-    </ul>
-  </section>
+      <div style="margin-top: 20px;">
+        <h3>Netcracker Technology</h3>
+        <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
+        <p><i class="far fa-calendar-alt"></i> Oct 2022 – Present · Full-time · 3 yrs 1 mo</p>
+      </div>
 
-  <section id="contributions">
-    <h2>Open Source Contributions</h2>
-    <p>Check out my GitHub: <a href="https://github.com/JathinLalam" target="_blank">github.com/JathinLalam</a></p>
-  </section>
+      <div style="margin-left: 20px; margin-top: 10px;">
+        <h4><i class="fas fa-code"></i> Software Engineer (Aug 2024 – Present)</h4>
+        <ul>
+          <li>
+            Gained experience in developing <strong>metrics generation</strong> and
+            <strong>data processing</strong> services using Golang.
+          </li>
+          <li>
+            Designed scenarios for <strong>GenAI</strong> and <strong>CIP</strong> chains
+            to perform required API calls efficiently.
+          </li>
+          <li>
+            Worked extensively with <strong>Jooby3</strong>, focusing on handling information
+            from multiple entities and performing <strong>state machine implementation</strong>.
+          </li>
+          <li>
+            Skilled in <strong>Spring Boot</strong>, <strong>Software Design</strong>,
+            and modern <strong>backend architecture</strong>.
+          </li>
+        </ul>
+      </div>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <p>Backend Developer at eBay (via CPrime) — building scalable microservices, Kafka stream pipelines, and API integrations in Go.</p>
-  </section>
+      <div style="margin-left: 20px; margin-top: 20px;">
+        <h4><i class="fas fa-laptop-code"></i> Junior Software Engineer (Oct 2022 – Jul 2024)</h4>
+        <ul>
+          <li>
+            Backend developer specializing in <strong>Golang</strong> with expertise in
+            <strong>Docker</strong>, <strong>Kubernetes</strong>, and <strong>ArangoDB</strong>.
+          </li>
+          <li>
+            Worked on <strong>SPOG</strong>, a streaming application leveraging
+            <strong>Kafka</strong> and <strong>Zookeeper</strong> for distributed data processing.
+          </li>
+          <li>
+            Built <strong>Go generator libraries</strong> to automate repetitive code and
+            improve developer productivity.
+          </li>
+          <li>
+            Developed and optimized <strong>real-time metrics</strong> and
+            <strong>large-scale data processing applications</strong> for observability.
+          </li>
+          <li>
+            Implemented <strong>state machines</strong> and data workflows using
+            <strong>PostgreSQL</strong> with <strong>Jooby3</strong>.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <div class="project-grid">
+
+        <div class="project-card">
+          <h3>SPOG Platform</h3>
+          <p>Backend services in Go for file and vector storage synchronization. Ensures efficient data sync and reliable processing between microservices.</p>
+          <p><strong>Tech:</strong> Go, Kafka, Zookeeper, ArangoDB, Docker, Jooby3</p>
+        </div>
+
+        <div class="project-card">
+          <h3>NDO Sync</h3>
+          <p>ArangoDB integration for incremental data sync using WAL tracking. Enables near real-time data synchronization across distributed systems.</p>
+          <p><strong>Tech:</strong> Go, ArangoDB, WAL, Jooby3</p>
+        </div>
+
+        <div class="project-card">
+          <h3>2-Level Authentication System</h3>
+          <p>Secure authentication system using credential-based login and face detection verification to ensure user authenticity.</p>
+          <p><strong>Tech:</strong> Python, OpenCV, Flask</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Encryption-Based Messaging App</h3>
+          <p>Secure chat app built with Flutter + Firebase featuring encrypted message storage and real-time delivery.</p>
+          <p><strong>Tech:</strong> Flutter, Dart, Firebase</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Loctubers Website</h3>
+          <p>Full-stack web platform for content sharing, developed using the Django framework and hosted online.</p>
+          <p><strong>Tech:</strong> Django, Python, HTML, CSS</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.E. in Computer Science</strong> – SDM College of Engineering and Technology, Dharwad (2018–2022) | CGPA: 9.17</li>
+        <li><strong>Higher Secondary:</strong> Sri Chaitanya College of Education (2016–2018)</li>
+        <li><strong>Secondary:</strong> Completed with 94% aggregate</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certificates</h2>
+      <ul>
+        <li><strong>PCAP – Programming in Python</strong> (Cisco Networking Academy)</li>
+        <li><strong>LearnCodeOnline Bootcamp</strong> (Python & Development)</li>
+        <li><strong>Artificial Intelligence Fundamentals</strong> – NLP, ML, DL, Chatbots, Neural Networks, Ethics (Ongoing)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <div class="contact">
+        <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
+        <span><i class="fas fa-envelope"></i> <a href="mailto:jathinlalam@gmail.com">jathinlalam@gmail.com</a></span>
+        <span><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/jathinlalam" target="_blank">linkedin.com/in/jathinlalam</a></span>
+        <span><i class="fab fa-github"></i> <a href="https://github.com/JathinLalam" target="_blank">github.com/JathinLalam</a></span>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Jathin Lalam | Built with ❤️ using HTML & CSS</p>
+  </footer>
+
 </body>
 </html>
