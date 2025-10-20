@@ -4,34 +4,53 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jathin Lalam | Software Engineer Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
+    /* ---------- GLOBAL ---------- */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
-      color: #f1f1f1;
+      background: radial-gradient(circle at top left, #141e30, #243b55);
+      color: #f3f3f3;
       overflow-x: hidden;
       scroll-behavior: smooth;
     }
 
+    h1, h2, h3, h4 {
+      font-weight: 600;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #ffcc00;
+    }
+
+    /* ---------- HEADER ---------- */
     header {
       text-align: center;
-      padding: 60px 20px;
-      animation: fadeInDown 1s ease-in-out;
+      padding: 80px 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 1s ease;
     }
 
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
+      font-size: 3rem;
+      color: #ffcc00;
     }
 
     header p {
+      margin-top: 10px;
       font-size: 1.2rem;
       color: #ccc;
     }
@@ -41,42 +60,44 @@
     }
 
     .social-links a {
-      margin: 0 15px;
-      font-size: 1.5rem;
-      color: #00bcd4;
-      transition: color 0.3s ease, transform 0.3s ease;
+      margin: 0 12px;
+      font-size: 1.6rem;
+      transition: transform 0.3s ease, color 0.3s ease;
     }
 
     .social-links a:hover {
-      color: #ffcc00;
       transform: scale(1.2);
+      color: #ffcc00;
     }
 
+    /* ---------- SECTIONS ---------- */
     section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 50px auto;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      animation: fadeInUp 1s ease;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      animation: fadeInUp 1s ease-in-out;
     }
 
     section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
     }
 
     h2 {
+      font-size: 1.8rem;
       color: #ffcc00;
-      border-bottom: 2px solid #ffcc00;
-      padding-bottom: 8px;
       margin-bottom: 20px;
+      border-left: 4px solid #ffcc00;
+      padding-left: 10px;
     }
 
     ul {
-      margin-left: 20px;
+      margin-left: 25px;
       line-height: 1.8;
     }
 
@@ -84,45 +105,110 @@
       margin-bottom: 10px;
     }
 
+    h3 {
+      color: #00bcd4;
+      margin-top: 20px;
+    }
+
+    h4 {
+      color: #ffd95a;
+      margin: 10px 0;
+    }
+
+    /* ---------- PROJECT CARDS ---------- */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .project-card p {
+      color: #ddd;
+      margin-bottom: 10px;
+    }
+
+    .project-links a {
+      display: inline-block;
+      margin-top: 5px;
+      color: #00bcd4;
+      font-weight: 500;
+    }
+
+    .project-links a:hover {
+      color: #ffcc00;
+    }
+
+    /* ---------- CONTACT ---------- */
+    .contact span {
+      display: block;
+      margin: 8px 0;
+    }
+
+    .contact i {
+      color: #ffcc00;
+      margin-right: 8px;
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       color: #aaa;
       font-size: 0.9rem;
-      border-top: 1px solid #333;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.05);
+      margin-top: 60px;
     }
 
-    /* Animations */
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
+    /* ---------- ANIMATIONS ---------- */
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    /* Subtle scroll reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease;
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
-<body>
 
+<body>
   <header>
     <h1>Jathin Lalam</h1>
     <p>Software Engineer | Golang Developer | Backend Enthusiast</p>
     <p>Bangalore, Karnataka, India</p>
-
     <div class="social-links">
       <a href="https://github.com/JathinLalam/" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       <a href="https://www.linkedin.com/in/jathin-lalam-0044b8194/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
@@ -132,217 +218,115 @@
 
   <main>
 
-    <section id="work-experience" style="margin-bottom: 40px;">
+    <!-- Work Experience -->
+    <section>
       <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
 
-      <div style="margin-top: 20px;">
-        <h3>eBay (via Cprime)</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
-        <p><i class="far fa-calendar-alt"></i> Oct 2025 – Present · Full-time · 0 yrs 1 mo</p>
-      </div>
+      <h3>eBay (via Cprime)</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
+      <p><i class="far fa-calendar-alt"></i> Oct 2025 – Present · Full-time</p>
 
-      <div style="margin-left: 20px; margin-top: 10px;">
-        <h4><i class="fas fa-shield-alt"></i> Cyber Security Engineer (Oct 2025 – Present)</h4>
-        <ul>
-          <li>
-            Contributing to the development and maintenance of automation systems 
-            that enhance security and operational workflows within large-scale 
-            Kubernetes environments.
-          </li>
-          <li>
-            Enhancing existing solutions for container image analysis and compliance 
-            verification, ensuring timely reporting and automated notifications 
-            across integrated communication platforms.
-          </li>
-          <li>
-            Supporting tools that interpret and extend policy frameworks, 
-            simplifying the implementation and management of custom compliance rules 
-            within Kubernetes clusters.
-          </li>
-          <li>
-            Utilizing <strong>Golang</strong> for feature enhancements and automation logic, 
-            with <strong>Hadoop</strong> and <strong>Splunk</strong> for data monitoring, 
-            analysis, and system observability.
-          </li>
-          <li>
-            Focused on improving reliability, scalability, and visibility of 
-            existing automation pipelines, ensuring consistent performance and 
-            adherence to organizational compliance standards.
-          </li>
-        </ul>
-      </div>
+      <h4><i class="fas fa-shield-alt"></i> Cyber Security Engineer</h4>
+      <ul>
+        <li>Developing and maintaining automation systems enhancing security workflows in Kubernetes environments.</li>
+        <li>Enhancing tools for container image analysis and compliance verification.</li>
+        <li>Supporting tools that interpret and extend policy frameworks for Kubernetes compliance management.</li>
+        <li>Using <strong>Golang</strong> for automation logic and <strong>Hadoop</strong> / <strong>Splunk</strong> for observability.</li>
+        <li>Improving reliability, scalability, and visibility of automation pipelines.</li>
+      </ul>
 
-      <div style="margin-top: 20px;">
-        <h3>Netcracker Technology</h3>
-        <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
-        <p><i class="far fa-calendar-alt"></i> Oct 2022 – Oct 2025 · Full-time · 3 yrs </p>
-      </div>
+      <h3>Netcracker Technology</h3>
+      <p><i class="fas fa-map-marker-alt"></i> Bengaluru, Karnataka, India</p>
+      <p><i class="far fa-calendar-alt"></i> Oct 2022 – Oct 2025 · Full-time</p>
 
-      <div style="margin-left: 20px; margin-top: 10px;">
-        <h4><i class="fas fa-code"></i> Software Engineer (Aug 2024 – Oct 2025)</h4>
-        <ul>
-          <li>
-            Contributed to building a <strong>Knowledge Base</strong> system designed to aggregate data 
-            from multiple sources, index it, and upload it to <strong>vector storage</strong> for efficient 
-            retrieval and question answering by AI agents.
-          </li>
-          <li>
-            Implemented and optimized backend services using <strong>Golang</strong>, integrating 
-            <strong>Kafka</strong> for event streaming, <strong>PostgreSQL</strong> for data management, 
-            and <strong>Qdrant</strong> for vector-based similarity search.
-          </li>
-          <li>
-            Designed and maintained scalable <strong>REST</strong> and <strong>gRPC</strong> APIs 
-            to enable smooth communication between microservices and external components.
-          </li>
-          <li>
-            Migrated existing systems previously developed using <strong>Java (Jooby3)</strong> to 
-            a more streamlined and maintainable Golang-based solution, reducing dependency overhead 
-            and improving overall system performance.
-          </li>
-          <li>
-            Enhanced existing features, improved system consistency, and simplified architecture 
-            by reworking legacy components such as <strong>SIP chains</strong> and <strong>prebuilt libraries</strong>.
-          </li>
-        </ul>
-      </div>
+      <h4><i class="fas fa-code"></i> Software Engineer (Aug 2024 – Oct 2025)</h4>
+      <ul>
+        <li>Built a <strong>Knowledge Base System</strong> for data aggregation and vector storage indexing.</li>
+        <li>Developed backend services using <strong>Golang</strong>, <strong>Kafka</strong>, <strong>PostgreSQL</strong>, and <strong>Qdrant</strong>.</li>
+        <li>Designed scalable <strong>REST</strong> and <strong>gRPC</strong> APIs for microservices.</li>
+        <li>Migrated legacy <strong>Java (Jooby3)</strong> systems to modern Golang services.</li>
+        <li>Refined architecture and simplified <strong>SIP chains</strong> and legacy libraries.</li>
+      </ul>
 
-      <div style="margin-left: 20px; margin-top: 20px;">
-        <h4><i class="fas fa-laptop-code"></i> Junior Software Engineer (Oct 2022 – Jul 2024)</h4>
-        <ul>
-          <li>
-            Contributed as a <strong>backend developer</strong> specializing in <strong>Golang</strong>, 
-            with hands-on experience in <strong>Docker</strong>, <strong>Kubernetes</strong>, 
-            and <strong>ArangoDB</strong> for containerized and scalable systems.
-          </li>
-          <li>
-            Worked on <strong>SPOG</strong>, a distributed streaming platform leveraging 
-            <strong>Kafka</strong> and <strong>Zookeeper</strong> for real-time data ingestion 
-            and processing across multiple services.
-          </li>
-          <li>
-            Developed <strong>Go generator libraries</strong> to automate repetitive boilerplate 
-            code, improving code maintainability and overall developer efficiency.
-          </li>
-          <li>
-            Designed and optimized <strong>real-time metrics</strong> and 
-            <strong>data processing pipelines</strong> to enhance system observability 
-            and performance monitoring.
-          </li>
-          <li>
-            Collaborated on improving microservice communication patterns, refining 
-            API designs, and ensuring high system reliability through robust 
-            monitoring and logging practices.
-          </li>
-        </ul>
-      </div>
-
+      <h4><i class="fas fa-laptop-code"></i> Junior Software Engineer (Oct 2022 – Jul 2024)</h4>
+      <ul>
+        <li>Specialized in <strong>Golang</strong> backend with <strong>Docker</strong>, <strong>Kubernetes</strong>, <strong>ArangoDB</strong>.</li>
+        <li>Worked on <strong>SPOG</strong>, a distributed streaming app using <strong>Kafka</strong> and <strong>Zookeeper</strong>.</li>
+        <li>Created <strong>Go code generators</strong> to automate repetitive boilerplate code.</li>
+        <li>Developed real-time metrics pipelines for observability.</li>
+        <li>Enhanced microservice reliability and API communication.</li>
+      </ul>
     </section>
 
+    <!-- Projects -->
     <section>
-      <h2>Projects</h2>
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
       <div class="project-grid">
-
         <div class="project-card">
           <h3>SPOG Platform</h3>
-          <p>Backend services in Go for file and vector storage synchronization. Ensures efficient data sync and reliable processing between microservices.</p>
+          <p>Backend Go services for file and vector storage synchronization.</p>
           <p><strong>Tech:</strong> Go, Kafka, Zookeeper, ArangoDB, Docker, Jooby3</p>
         </div>
 
         <div class="project-card">
           <h3>NDO Sync</h3>
-          <p>ArangoDB integration for incremental data sync using WAL tracking. Enables near real-time data synchronization across distributed systems.</p>
+          <p>Incremental ArangoDB sync with WAL tracking for distributed systems.</p>
           <p><strong>Tech:</strong> Go, ArangoDB, WAL, Jooby3</p>
         </div>
 
         <div class="project-card">
           <h3>2-Level Authentication System</h3>
-          <p>Secure authentication system using credential-based login and face detection verification to ensure user authenticity.</p>
+          <p>Credential + face-detection login system.</p>
           <p><strong>Tech:</strong> Python, OpenCV, Flask</p>
         </div>
 
         <div class="project-card">
           <h3>Encryption-Based Messaging App</h3>
-          <p>Secure chat app built with Flutter + Firebase featuring encrypted message storage and real-time delivery.</p>
+          <p>Encrypted chat app with Flutter + Firebase.</p>
           <p><strong>Tech:</strong> Flutter, Dart, Firebase</p>
         </div>
 
         <div class="project-card">
           <h3>Loctubers Website</h3>
-          <p>Full-stack web platform for content sharing, developed using the Django framework and hosted online.</p>
+          <p>Content-sharing web platform using Django.</p>
           <p><strong>Tech:</strong> Django, Python, HTML, CSS</p>
         </div>
-
       </div>
     </section>
 
-    <section id="personal-projects" style="margin-top: 50px;">
-      <h2><i class="fas fa-project-diagram"></i> Personal Projects</h2>
-
-      <div class="project-grid">
-
-        <div class="project-card">
-          <h3><i class="fas fa-map-marked-alt"></i> Geo Locator</h3>
-          <p>
-            Location-sharing service that enables tenants and customers to securely share 
-            their live locations with authorized third-party users using session-based access. 
-            Supports geofencing and location analytics.
-          </p>
-          <p><strong>Tech:</strong> Golang, Gin, PostgreSQL, Docker</p>
-          <div class="project-links">
-            <a href="https://github.com/your-username/geo-locator" target="_blank">
-              <i class="fas fa-external-link-alt"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3><i class="fas fa-boxes"></i> Product Tracking System</h3>
-          <p>
-            Inventory management system for tracking stock levels, item counts, and 
-            warehouse distribution with alerts for low inventory thresholds.
-          </p>
-          <p><strong>Tech:</strong> Java, Spring Boot, MySQL, Hibernate</p>
-          <div class="project-links">
-            <a href="https://github.com/your-username/product-tracking" target="_blank">
-              <i class="fas fa-external-link-alt"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3><i class="fas fa-coins"></i> Exchange Rate Information</h3>
-          <p>
-            Financial microservice providing real-time exchange rates for global 
-            fiat and crypto currencies. Offers REST and streaming endpoints.
-          </p>
-          <p><strong>Tech:</strong> Golang, REST APIs, Redis, Docker</p>
-          <div class="project-links">
-            <a href="https://github.com/your-username/exchange-rate-information" target="_blank">
-              <i class="fas fa-external-link-alt"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3><i class="fas fa-video"></i> Stream Engine</h3>
-          <p>
-            Lightweight video hosting service allowing users to upload and stream content. 
-            Handles encoding, metadata management, and secure playback.
-          </p>
-          <p><strong>Tech:</strong> Golang, FFmpeg, AWS S3, Nginx</p>
-          <div class="project-links">
-            <a href="https://github.com/your-username/stream-engine" target="_blank">
-              <i class="fas fa-external-link-alt"></i> View on GitHub
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
+    <!-- Personal Projects -->
     <section>
-      <h2>Education</h2>
+      <h2><i class="fas fa-flask"></i> Personal Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Geo Locator</h3>
+          <p>Location-sharing with secure access control and geofencing.</p>
+          <p><strong>Tech:</strong> Golang, Gin, PostgreSQL, Docker</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Product Tracking System</h3>
+          <p>Inventory management system with low-stock alerts.</p>
+          <p><strong>Tech:</strong> Java, Spring Boot, MySQL, Hibernate</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Exchange Rate Information</h3>
+          <p>Real-time fiat & crypto rate microservice with REST/stream APIs.</p>
+          <p><strong>Tech:</strong> Golang, REST, Redis, Docker</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Stream Engine</h3>
+          <p>Video hosting platform with upload, encoding, and playback.</p>
+          <p><strong>Tech:</strong> Golang, FFmpeg, AWS S3, Nginx</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
       <ul>
         <li><strong>B.E. in Computer Science</strong> – SDM College of Engineering and Technology, Dharwad (2018–2022) | CGPA: 9.17</li>
         <li><strong>Higher Secondary:</strong> Sri Chaitanya College of Education (2016–2018)</li>
@@ -350,8 +334,9 @@
       </ul>
     </section>
 
+    <!-- Certificates -->
     <section>
-      <h2>Certificates</h2>
+      <h2><i class="fas fa-certificate"></i> Certificates</h2>
       <ul>
         <li><strong>PCAP – Programming in Python</strong> (Cisco Networking Academy)</li>
         <li><strong>LearnCodeOnline Bootcamp</strong> (Python & Development)</li>
@@ -359,8 +344,9 @@
       </ul>
     </section>
 
+    <!-- Contact -->
     <section>
-      <h2>Contact</h2>
+      <h2><i class="fas fa-envelope-open-text"></i> Contact</h2>
       <div class="contact">
         <span><i class="fas fa-map-marker-alt"></i> Bangalore, India</span>
         <span><i class="fas fa-envelope"></i> <a href="mailto:jathinlalam@gmail.com">jathinlalam@gmail.com</a></span>
@@ -368,24 +354,10 @@
         <span><i class="fab fa-github"></i> <a href="https://github.com/JathinLalam" target="_blank">github.com/JathinLalam</a></span>
       </div>
     </section>
-
   </main>
 
   <footer>
-    © 2025 Jathin Lalam | Built with using HTML & CSS
+    © 2025 Jathin Lalam | Built using HTML & CSS
   </footer>
-
-    <script>
-    // Scroll animation reveal
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.reveal').forEach((el) => {
-        const windowHeight = window.innerHeight;
-        const elementTop = el.getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-          el.classList.add('active');
-        }
-      });
-    });
-  </script>
 </body>
 </html>
