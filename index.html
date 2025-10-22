@@ -1,26 +1,539 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jathin Lalam - Software Engineer | Golang Developer | Backend Enthusiast</title>
-    <meta name="description" content="Portfolio of Jathin Lalam, a Software Engineer and Golang Developer specializing in backend development, cybersecurity, and scalable systems. Based in Bangalore, India." />
-    <meta name="author" content="Jathin Lalam" />
-    <meta name="keywords" content="Jathin Lalam, Software Engineer, Golang Developer, Backend Developer, Cybersecurity, Java, Python, PostgreSQL, Docker, Kubernetes, Bangalore" />
-
-    <meta property="og:title" content="Jathin Lalam - Software Engineer | Golang Developer" />
-    <meta property="og:description" content="Portfolio of Jathin Lalam, a Software Engineer and Golang Developer specializing in backend development, cybersecurity, and scalable systems." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="/favicon.ico" />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jathin Lalam | Software Engineer & Golang Developer</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Poppins (headings) and Inter (body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jathin Lalam - Software Engineer | Golang Developer" />
-    <meta name="twitter:description" content="Portfolio of Jathin Lalam, a Software Engineer and Golang Developer specializing in backend development, cybersecurity, and scalable systems." />
-  </head>
+    <style>
+        :root {
+            --accent-teal: #2dd4bf; /* Tailwind teal-400 */
+            --accent-gold: #facc15; /* Tailwind amber-400 */
+            --bg-dark: #0f172a; /* Slate-900 */
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: #f1f5f9; /* Slate-100 */
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: #e2e8f0; /* Slate-200 */
+        }
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-    <script src="/portfolio-animations.js"></script>
-  </body>
+        /* Glassmorphism Effect for Cards */
+        .glass-card {
+            background-color: rgba(30, 41, 59, 0.6); /* Slate-800 with transparency */
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Subtle Glow/Gradient for Headings */
+        .glow-heading {
+            text-shadow: 0 0 5px rgba(45, 212, 191, 0.5); /* Subtle Teal Glow */
+        }
+
+        /* Project Card Hover Effect */
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 0 20px rgba(45, 212, 191, 0.4); /* Teal Glow Shadow */
+            border-color: var(--accent-teal);
+        }
+
+        /* Animated Hero Background (Abstract/Geometric) */
+        #hero-section {
+            background-image: linear-gradient(135deg, var(--bg-dark) 0%, rgba(15, 23, 42, 0.8) 50%, var(--bg-dark) 100%),
+                              radial-gradient(circle at 10% 20%, rgba(45, 212, 191, 0.1) 0%, rgba(250, 202, 21, 0.05) 50%, transparent 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Timeline Connector */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-left: -1px;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--accent-teal);
+            border: 3px solid var(--bg-dark);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Hero Section -->
+    <header id="hero-section" class="min-h-screen flex items-center justify-center text-center p-6 relative overflow-hidden">
+        <!-- Overlay for visual break -->
+        <div class="absolute inset-0 bg-black opacity-30"></div>
+        
+        <div class="z-10 max-w-4xl mx-auto py-20">
+            <h4 class="text-xl sm:text-2xl font-medium mb-3 text-white tracking-widest uppercase" data-aos="fade-down" data-aos-duration="800">Hello, I'm</h4>
+            <h1 class="text-6xl sm:text-8xl font-extrabold mb-4 glow-heading" data-aos="fade-down" data-aos-delay="200">
+                Jathin Lalam
+            </h1>
+            <p class="text-2xl sm:text-3xl font-light text-gray-300 mb-8" data-aos="fade-down" data-aos-delay="400">
+                <span class="text-teal-400 font-semibold">Software Engineer</span> | Golang Developer | Backend Enthusiast
+            </p>
+            <div class="flex items-center justify-center space-x-2 text-lg text-gray-400 mb-10" data-aos="fade-down" data-aos-delay="600">
+                <i class="fa-solid fa-location-dot text-teal-400"></i>
+                <span>Bangalore, Karnataka, India</span>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6" data-aos="fade-up" data-aos-delay="800">
+                <a href="https://github.com/JathinLalam" target="_blank" class="text-3xl text-gray-400 hover:text-teal-400 transition-colors duration-300" aria-label="GitHub Profile">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jathin-lalam-0044b8194/" target="_blank" class="text-3xl text-gray-400 hover:text-teal-400 transition-colors duration-300" aria-label="LinkedIn Profile">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:jathinlalam@gmail.com" class="text-3xl text-gray-400 hover:text-teal-400 transition-colors duration-300" aria-label="Email Jathin Lalam">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <a href="#experience" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-teal-400 animate-bounce p-3 rounded-full hover:bg-white/10 transition-all" aria-label="Scroll to Work Experience">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-16">
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="mb-24">
+            <h2 class="text-4xl font-bold mb-12 text-center glow-heading" data-aos="fade-up">
+                <i class="fas fa-briefcase text-gold-400 mr-3"></i>Work Experience
+            </h2>
+            
+            <div class="max-w-4xl mx-auto relative pl-8 sm:pl-16">
+
+                <!-- eBay (via Cprime) -->
+                <div class="timeline-item pb-16 relative" data-aos="fade-right">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card p-6 rounded-xl ml-4 sm:ml-8 hover:ring-2 hover:ring-teal-400/50">
+                        <h3 class="text-2xl font-semibold text-teal-400 mb-2">Cyber Security Engineer</h3>
+                        <p class="text-lg text-gray-200 mb-3">eBay (via Cprime)</p>
+                        <div class="flex flex-col sm:flex-row sm:space-x-4 text-sm text-gray-400 mb-4">
+                            <span class="flex items-center mb-1 sm:mb-0"><i class="fas fa-calendar-alt mr-2 text-gold-400"></i>Jul 2021 – Present</span>
+                            <span class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-gold-400"></i>Remote / San Jose, CA</span>
+                        </div>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-300">
+                            <li>Developed and maintained security tools and automation scripts.</li>
+                            <li>Monitored and responded to security incidents.</li>
+                            <li>Performed vulnerability assessments and penetration testing.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Netcracker Technology - Software Engineer -->
+                <div class="timeline-item pb-16 relative" data-aos="fade-right" data-aos-delay="200">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card p-6 rounded-xl ml-4 sm:ml-8 hover:ring-2 hover:ring-teal-400/50">
+                        <h3 class="text-2xl font-semibold text-teal-400 mb-2">Software Engineer</h3>
+                        <p class="text-lg text-gray-200 mb-3">Netcracker Technology</p>
+                        <div class="flex flex-col sm:flex-row sm:space-x-4 text-sm text-gray-400 mb-4">
+                            <span class="flex items-center mb-1 sm:mb-0"><i class="fas fa-calendar-alt mr-2 text-gold-400"></i>Jan 2019 – Jun 2021</span>
+                            <span class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-gold-400"></i>Bangalore, India</span>
+                        </div>
+                        <ul class="list-disc ml-5 space-y-2 text-gray-300">
+                            <li>Worked on core OSS/BSS systems.</li>
+                            <li>Improved system performance and scalability.</li>
+                            <li>Collaborated with cross-functional teams on feature development.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Netcracker Technology - Junior Software Engineer -->
+                <div class="timeline-item pb-4 relative" data-aos="fade-right" data-aos-delay="400">
+                    <div class="timeline-dot"></div>
+                    <div class="glass-card p-6 rounded-xl ml-4 sm:ml-8 hover:ring-2 hover:ring-teal-400/50">
+                        <h3 class="text-2xl font-semibold text-teal-400 mb-2">Junior Software Engineer</h3>
+                        <p class="text-lg text-gray-200 mb-3">Netcracker Technology</p>
+                        <div class="flex flex-col sm:flex-row sm:space-x-4 text-sm text-gray-400 mb-4">
+                            <span class="flex items-center mb-1 sm:mb-0"><i class="fas fa-calendar-alt mr-2 text-gold-400"></i>Aug 2018 – Dec 2018</span>
+                            <span class="flex items-center"><i class="fas fa-map-marker-alt mr-2 text-gold-400"></i>Bangalore, India</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-24">
+            <h2 class="text-4xl font-bold mb-12 text-center glow-heading" data-aos="fade-up">
+                <i class="fas fa-rocket text-gold-400 mr-3"></i>Projects
+            </h2>
+            
+            <!-- Professional Projects -->
+            <h3 class="text-3xl font-semibold mb-6 text-teal-400" data-aos="fade-up">Professional Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                
+                <!-- SPOG Platform -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-duration="600">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">SPOG Platform</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of SPOG Platform...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Go</span><span class="badge">Microservices</span><span class="badge">k8s</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+
+                <!-- NDO Sync -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="100">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">NDO Sync</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of NDO Sync...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Python</span><span class="badge">Data Sync</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+
+                <!-- 2-Level Authentication System -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="200">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">2-Level Authentication System</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of 2-Level Auth...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Security</span><span class="badge">OAuth</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+                
+                <!-- Encryption-Based Messaging App -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="300">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">Encryption-Based Messaging App</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of Messaging App...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">E2E</span><span class="badge">Backend</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+
+                <!-- Loctubers Website -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="400">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">Loctubers Website</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of Loctubers Website...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Web Dev</span><span class="badge">Full Stack</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Personal Projects -->
+            <h3 class="text-3xl font-semibold mb-6 text-teal-400" data-aos="fade-up">Personal Projects</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Geo Locator -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="500">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">Geo Locator</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of Geo Locator...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Go</span><span class="badge">API</span><span class="badge">GeoJSON</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+
+                <!-- Product Tracking System -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="600">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">Product Tracking System</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of Product Tracking System...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Backend</span><span class="badge">DB</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+                
+                <!-- Exchange Rate Information -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="700">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">Exchange Rate Information</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of Exchange Rate...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">API</span><span class="badge">FinTech</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+                
+                <!-- Stream Engine -->
+                <div class="project-card glass-card p-6 rounded-xl flex flex-col justify-between" data-aos="zoom-in" data-aos-delay="800">
+                    <div>
+                        <h4 class="text-xl font-bold mb-2 text-gold-400">Stream Engine</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Description of Stream Engine...</p>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="badge">Go</span><span class="badge">Streaming</span>
+                        </div>
+                        <a href="#" target="_blank" class="text-teal-400 hover:underline"><i class="fab fa-github mr-2"></i>GitHub Link (Mock)</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        
+        <!-- Education and Certificates Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
+            
+            <!-- Education Section -->
+            <section id="education" data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-12 text-center lg:text-left glow-heading">
+                    <i class="fas fa-graduation-cap text-gold-400 mr-3"></i>Education
+                </h2>
+                
+                <div class="space-y-8 max-w-lg mx-auto lg:mx-0">
+                    
+                    <!-- B.E. in Computer Science -->
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-teal-400 shadow-xl hover:ring-2 hover:ring-teal-400/50">
+                        <h3 class="text-xl font-semibold text-teal-400">B.E. in Computer Science</h3>
+                        <p class="text-lg text-gray-200 mb-1">SDM College of Engineering and Technology</p>
+                        <span class="text-sm text-gray-400"><i class="fas fa-calendar-alt mr-2"></i>2014 – 2018</span>
+                    </div>
+
+                    <!-- Higher Secondary -->
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-teal-400 shadow-xl hover:ring-2 hover:ring-teal-400/50">
+                        <h3 class="text-xl font-semibold text-teal-400">Higher Secondary</h3>
+                        <p class="text-lg text-gray-200 mb-1">Sri Chaitanya College of Education</p>
+                        <span class="text-sm text-gray-400"><i class="fas fa-calendar-alt mr-2"></i>(Year/Details Placeholder)</span>
+                    </div>
+
+                    <!-- Secondary -->
+                    <div class="glass-card p-6 rounded-xl border-l-4 border-teal-400 shadow-xl hover:ring-2 hover:ring-teal-400/50">
+                        <h3 class="text-xl font-semibold text-teal-400">Secondary (94% aggregate)</h3>
+                        <p class="text-lg text-gray-200 mb-1">School Name Placeholder</p>
+                        <span class="text-sm text-gray-400"><i class="fas fa-percent mr-2"></i>94% Aggregate</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Certificates Section -->
+            <section id="certificates" data-aos="fade-left">
+                <h2 class="text-4xl font-bold mb-12 text-center lg:text-left glow-heading">
+                    <i class="fas fa-certificate text-gold-400 mr-3"></i>Certificates
+                </h2>
+                
+                <div class="space-y-8 max-w-lg mx-auto lg:mx-0">
+                    
+                    <!-- PCAP – Programming in Python (Cisco) -->
+                    <div class="glass-card p-6 rounded-xl flex items-center shadow-xl hover:ring-2 hover:ring-gold-400/50">
+                        <i class="fas fa-code text-3xl text-gold-400 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-100">PCAP – Programming in Python</h3>
+                            <p class="text-sm text-gray-400">Cisco Certified Associate</p>
+                        </div>
+                    </div>
+
+                    <!-- LearnCodeOnline Bootcamp -->
+                    <div class="glass-card p-6 rounded-xl flex items-center shadow-xl hover:ring-2 hover:ring-gold-400/50">
+                        <i class="fas fa-laptop-code text-3xl text-gold-400 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-100">LearnCodeOnline Bootcamp</h3>
+                            <p class="text-sm text-gray-400">Full Stack Development/Backend Focus</p>
+                        </div>
+                    </div>
+
+                    <!-- AI Fundamentals (NLP, ML, DL, Chatbots, Neural Networks, Ethics) -->
+                    <div class="glass-card p-6 rounded-xl flex items-center shadow-xl hover:ring-2 hover:ring-gold-400/50">
+                        <i class="fas fa-brain text-3xl text-gold-400 mr-4"></i>
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-100">AI Fundamentals</h3>
+                            <p class="text-sm text-gray-400">(NLP, ML, DL, Chatbots, Neural Networks, Ethics)</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-16">
+            <h2 class="text-4xl font-bold mb-12 text-center glow-heading" data-aos="fade-up">
+                <i class="fas fa-paper-plane text-gold-400 mr-3"></i>Get In Touch
+            </h2>
+            
+            <div class="max-w-xl mx-auto space-y-8">
+                
+                <!-- Contact Icons -->
+                <div class="flex flex-wrap justify-center gap-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <a href="mailto:jathinlalam@gmail.com" class="group glass-card p-4 rounded-xl w-32 flex flex-col items-center hover:bg-teal-400/20" aria-label="Email">
+                        <i class="fas fa-envelope text-3xl text-teal-400 group-hover:text-white transition-colors mb-2"></i>
+                        <span class="text-sm text-gray-300">Email</span>
+                    </a>
+
+                    <a href="https://github.com/JathinLalam" target="_blank" class="group glass-card p-4 rounded-xl w-32 flex flex-col items-center hover:bg-teal-400/20" aria-label="GitHub">
+                        <i class="fab fa-github text-3xl text-teal-400 group-hover:text-white transition-colors mb-2"></i>
+                        <span class="text-sm text-gray-300">GitHub</span>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/jathin-lalam-0044b8194/" target="_blank" class="group glass-card p-4 rounded-xl w-32 flex flex-col items-center hover:bg-teal-400/20" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin text-3xl text-teal-400 group-hover:text-white transition-colors mb-2"></i>
+                        <span class="text-sm text-gray-300">LinkedIn</span>
+                    </a>
+                    
+                    <div class="group glass-card p-4 rounded-xl w-32 flex flex-col items-center">
+                        <i class="fas fa-map-marker-alt text-3xl text-teal-400 mb-2"></i>
+                        <span class="text-sm text-gray-300">Bangalore, IN</span>
+                    </div>
+                </div>
+
+                <!-- Contact Form (Mailto implementation) -->
+                <div class="glass-card p-8 rounded-xl shadow-2xl" data-aos="fade-up" data-aos-delay="400">
+                    <form id="contact-form" action="mailto:jathinlalam@gmail.com" method="post" enctype="text/plain" class="space-y-6">
+                        <input type="text" name="Name" placeholder="Your Name" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-gold-400 focus:ring-1 focus:ring-gold-400 text-white placeholder-gray-400 transition-all">
+                        <input type="email" name="Email" placeholder="Your Email" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-gold-400 focus:ring-1 focus:ring-gold-400 text-white placeholder-gray-400 transition-all">
+                        <textarea name="Message" placeholder="Your Message" rows="5" required class="w-full p-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-gold-400 focus:ring-1 focus:ring-gold-400 text-white placeholder-gray-400 transition-all"></textarea>
+                        
+                        <button type="submit" class="w-full bg-teal-500 text-gray-900 font-bold py-3 rounded-lg hover:bg-teal-400 transition-colors duration-300 shadow-md shadow-teal-500/30">
+                            Send Message
+                        </button>
+                    </form>
+                    <p id="form-message" class="mt-4 text-center text-sm text-teal-400 hidden">
+                        A message draft has been prepared in your email client!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center py-8 border-t border-gray-800 text-gray-400">
+        <div class="container mx-auto">
+            <p class="text-sm">
+                © 2025 Jathin Lalam | Built using HTML, CSS & JavaScript
+                <i class="fas fa-heart text-teal-400 animate-pulse ml-2"></i>
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Custom CSS Styles for Tech Stack Badges (defined at the end of body for simplicity) -->
+    <script>
+        // Tech Stack Badges Style Setup
+        // This is done via JS/Tailwind config since we can't define custom components in the HTML template directly
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'accent-teal': '#2dd4bf',
+                        'accent-gold': '#facc15',
+                    },
+                    boxShadow: {
+                        'teal-glow': '0 0 10px rgba(45, 212, 191, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Must be after tailwind config script tag */
+        .badge {
+            @apply inline-block px-3 py-1 text-xs font-semibold rounded-full bg-gray-700 text-teal-400 border border-teal-400/50 transition-transform duration-300 hover:scale-105;
+        }
+    </style>
+
+    <!-- JS for Animations and Form Handling -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        window.onload = function() {
+            AOS.init({
+                duration: 1000,
+                once: true,
+                easing: 'ease-in-out',
+            });
+            
+            // Re-initialize AOS on window resize to ensure correct placement (optional but helpful)
+            window.addEventListener('resize', () => {
+                AOS.refresh();
+            });
+
+            // Handle mailto form submission to show confirmation message
+            const form = document.getElementById('contact-form');
+            const message = document.getElementById('form-message');
+
+            form.addEventListener('submit', function(event) {
+                // Prevent default form submission to allow mailto action
+                // event.preventDefault(); // Uncomment if using a true AJAX backend post
+                
+                // Show the message indicating the email draft is prepared
+                message.classList.remove('hidden');
+                
+                // Optional: Clear form fields after a brief delay
+                setTimeout(() => {
+                    form.reset();
+                    // Hide message after another delay
+                    setTimeout(() => {
+                        message.classList.add('hidden');
+                    }, 5000);
+                }, 100); 
+            });
+        };
+    </script>
+</body>
 </html>
